@@ -1,0 +1,10 @@
+openai>=1.0
+python-dotenv>=1.0
+chromadb>=0.5
+readability-lxml>=0.8
+
+# optional: telegram
+# python-telegram-bot>=21.0
+
+# optional: qq (onebot v11)
+# websockets>=12.0

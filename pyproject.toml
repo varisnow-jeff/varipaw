@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "varipaw"
+version = "0.1.0"
+description = "Extensible multi-channel AI Agent framework"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Varisnow"}]
+
+dependencies = [
+  "openai>=1.0",
+  "python-dotenv>=1.0",
+  "chromadb>=0.5",
+  "readability-lxml>=0.8",
+]
+
+[project.optional-dependencies]
+telegram = ["python-telegram-bot>=21.0"]
+qq = ["websockets>=12.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["varipaw*"]
