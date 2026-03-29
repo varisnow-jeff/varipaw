@@ -15,23 +15,30 @@ VariPaw is an engineering-oriented agent framework that keeps conversation, tool
 
 ## 架构图 | Architecture
 
-```mermaid
-flowchart TD
-    A[app<br/>bootstrap / config / DI] --> B[core<br/>loop / contracts / policies]
-    B --> C[capabilities<br/>tools / memory / skills]
-    D[adapters<br/>channels / providers] --> B
-    B --> E[runtime<br/>trace / replay / logger / errors]
-```
+<p align="center">
+  <img src="docs/varipaw_architecture.svg" alt="VariPaw Architecture" width="800">
+</p>
+
 
 ## 核心特性 | Core Features
 
-- **ReAct 循环 / ReAct Loop**: 支持思考-行动-观察链路，含工具调用与错误收敛  
-- **多渠道适配 / Multi-Channel Adapters**: CLI、Telegram、QQ(OneBot v11)  
-- **记忆系统 / Memory**: SQLite 短期记忆 + ChromaDB 语义检索  
-- **技能文件系统 / Skill Files**: 兼容扁平与目录式技能文件，支持 OpenClaw/Nanobot 风格 metadata  
-- **工具系统 / Tooling**: `web_search` / `web_reader` / `shell`  
-- **策略系统 / Policies**: 步数限制、工具权限、超时、重试策略  
-- **可观测性 / Observability**: trace、replay、结构化日志
+- **解耦的 ReAct 核心 / Decoupled ReAct Loop**: 
+  基于接口（Protocol）抽象，将主循环逻辑与具体的通信渠道、存储引擎彻底分离。
+- **长短期混合记忆 / Hybrid Memory**: 
+  结合 SQLite（保存近期上下文）与 ChromaDB（长期语义检索），按需组装历史记录，控制 Token 消耗。
+- **动态技能路由 / Dynamic Skills**: 
+  通过独立的 `.md` 文件定义 AI 行为规范。支持根据用户输入动态匹配 Prompt，并在加载前自动进行宿主机环境（依赖/环境变量）自检。
+- **受控的工具执行 / Controlled Tooling**: 
+  提供 `web_search` / `web_reader` / `shell` 等基础工具。内置执行超时与输出截断机制，并为高危操作提供基于状态挂起的人工确认流（Human-in-the-loop）。
+- **运行时可观测性 / Runtime Observability**: 
+  记录单次请求的 Step 级执行链路（Trace），支持错误快照的本地回放（Replay），并统一输出结构化 JSON 日志以方便 Debug。
+- **多渠道接入 / Multi-Channel Adapters**: 
+  统一消息数据契约，目前内置 CLI、Telegram、QQ (OneBot v11) 三种接入端。
+
+## 工程报告 | Engineering Report
+
+想要深入了解 VariPaw 的系统分层逻辑、一次完整请求的主链路执行过程（Request Lifecycle）以及各子模块的代码级职责，请阅读详细的工程报告：
+👉 [VariPaw 工程报告 (Engineering Report)](docs/engineering-report.md)
 
 ## 快速开始 | Quick Start
 
