@@ -2,7 +2,7 @@
 
 ## 1. 项目目标与定位
 
-VariPaw 是一个分层清晰、可扩展的多渠道 AI Agent 框架。  
+VariPaw 是一个分层清晰、可扩展的多渠道 AI Agent v0 工程脚手架（Scaffold）。  
 核心目标是把以下能力组合到同一条稳定主链路中：
 
 - 多渠道输入输出（CLI / Telegram / QQ）

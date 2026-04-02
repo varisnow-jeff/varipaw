@@ -1,17 +1,21 @@
 # VariPaw
 
-可扩展的多渠道 AI Agent 框架，支持工具调用、记忆系统和技能文件驱动。  
-An extensible multi-channel AI Agent framework with tool calling, memory, and skill-file driven behavior.
+分层清晰、可扩展的多渠道 AI Agent v0 Scaffold，内置工具调用、记忆系统与技能路由底座。  
+A cleanly layered, extensible v0 scaffold for multi-channel AI Agents, featuring tool calling, memory, and skill routing behavior.
 
 **Author / 作者**: Varisnow
 
 ## 项目简介 | Overview
 
 **中文**  
-VariPaw 是一个面向工程落地的 Agent 框架，目标是把“可对话、可调用工具、可长期演进”的能力做成清晰分层、可替换组件。它解决的问题是：当你把 Agent 接到不同渠道（CLI/Telegram/QQ）并接入工具、记忆、策略时，如何保持主链路稳定、结构可维护、行为可观测。
+VariPaw 并非一个需要从零学习和组装的庞大框架，而是一个面向工程落地的 AI Agent v0 Scaffold（工程脚手架）。  
+它的核心目标是为你提供一个经过实战检验的底层骨架，把“多渠道交互、工具调用、长期记忆编排与技能路由”等能力固化为清晰的分层结构。它解决的核心问题是：当你准备把 Agent 接入各类真实渠道（CLI / Telegram / QQ），并配置复杂的工具与策略时，无需在庞杂的面条代码里挣扎——只需 Clone 本脚手架并在规范内“填空”或扩展，即可拥有一条主链路稳定、结构极易维护、且运行时完全可观测（Trace / Replay）的专属 Agent 引擎。
 
 **English**  
-VariPaw is an engineering-oriented agent framework that keeps conversation, tool use, and long-term evolution in a clean layered architecture. It addresses the practical challenge of connecting multiple channels (CLI/Telegram/QQ), tools, memory, and policies without turning the core loop into coupled, hard-to-maintain code.
+Rather than a bloated framework you have to learn from scratch, VariPaw is an engineering-oriented v0 scaffold for AI Agents.  
+It provides a battle-tested, out-of-the-box boilerplate that decouples conversation, tool use, memory management, and skill routing into a clean, layered architecture. It solves the practical challenge of agent deployment: when connecting to multiple channels (CLI / Telegram / QQ) with various tools and policies, you don't have to deal with coupled, hard-to-maintain code. Just clone this scaffold and build upon it to keep your core loop stable, extensible, and fully observable (Trace / Replay).
+
+
 
 ## 架构图 | Architecture
 
